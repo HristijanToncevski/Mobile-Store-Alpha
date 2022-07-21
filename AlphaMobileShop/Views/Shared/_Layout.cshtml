@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Alpha", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="container">
+                <div class="container-Text-Align-Left">
+                <div class="col-sm-3">
+                        <a href="@Url.Action("Index","Home")">
+                            <img src="@Url.Content("~/logo_transparent650.png")" style="width:50%; max-height: 102.5px; max-width: 102.5px; min-height: 90px; min-width: 90px;" />
+                        </a>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Контакт</h5>
+                    <ul class="list-unstyled" style="line-height: 1.5;">
+                        <li>070 123 456</li>
+                        <li>contact@alpha.com</li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>За нас</h5>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Социјални мрежи</h5>
+                    <div>
+                        <ul class="list-unstyled" style="line-height: 1.5;">
+                            <li>Facebook</li>
+                            <li>Instagram</li>
+                            <li>Twitter</li>
+                        </ul>  
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="container">
+                <div class="text-center col-sm-12">
+                    &copy; @DateTime.Now.Year - Alpha Mobile Store
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
