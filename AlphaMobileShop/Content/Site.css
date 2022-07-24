@@ -49,6 +49,7 @@ footer .container .col-sm-3:nth-child(1) {
 
 footer ul li a {
     text-decoration: none;
+    color: black;
 }
 
 .carousel {
@@ -63,6 +64,14 @@ footer ul li a {
 .recommended .row .column {
     flex: 30%;
     padding: 20px;
+}
+
+.bg-white:hover {
+    box-shadow: 0.25rem 0.75rem 1.25rem #3d7e77 !important;
+}
+
+hr {
+    border: 1px double black;
 }
 
 @media screen and (max-width: 992px) {
@@ -93,8 +102,6 @@ footer ul li a {
     h5 {
         padding-top: 20px;
     }
-
-
 }
 
 @media screen and (max-width: 600px) {
