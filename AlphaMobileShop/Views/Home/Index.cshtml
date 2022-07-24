@@ -1,13 +1,33 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Alpha Mobile Store";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div id="CarouselMain" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#CarouselMain" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#CarouselMain" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#CarouselMain" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+            <img src="~/Images/appleh600.jpg" class="h-100 w-100 rounded" alt="First">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="~/Images/ipad.jpg" class="h-100 w-100 rounded" alt="Second">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="~/Images/samsunggalaxyw1528h600.jpg" class="h-100 w-100 rounded" alt="Third">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#CarouselMain" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#CarouselMain" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
-
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>

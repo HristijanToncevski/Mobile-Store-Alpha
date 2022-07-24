@@ -213,6 +213,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\appleh600.jpg" />
+    <Content Include="Images\ipad.jpg" />
+    <Content Include="Images\samsunggalaxyw1528h600.jpg" />
     <Content Include="logo.png" />
     <Content Include="logo_transparent.png" />
     <Content Include="logo_transparent650.png" />
