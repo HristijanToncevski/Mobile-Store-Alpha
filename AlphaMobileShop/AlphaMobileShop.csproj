@@ -214,8 +214,17 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\appleh600.jpg" />
+    <Content Include="Images\AppleIpad2022.jpg" />
+    <Content Include="Images\AppleIPhone13ProMax.jpg" />
+    <Content Include="Images\AppleSE2022.jpg" />
+    <Content Include="Images\AppleWatch7.jpg" />
+    <Content Include="Images\GooglePixel6Pro.jpg" />
     <Content Include="Images\ipad.jpg" />
+    <Content Include="Images\OnePlus10Pro.jpg" />
+    <Content Include="Images\SamsungGalaxyNote20Ulta5G.jpg" />
+    <Content Include="Images\SamsungGalaxyS22Ultra5G.jpg" />
     <Content Include="Images\samsunggalaxyw1528h600.jpg" />
+    <Content Include="Images\Xiaomi12Pro.jpg" />
     <Content Include="logo.png" />
     <Content Include="logo_transparent.png" />
     <Content Include="logo_transparent650.png" />

@@ -18,7 +18,7 @@
 .navbar-nav {
     padding: 15px 0;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 header ul li a {
@@ -51,6 +51,26 @@ footer ul li a {
     text-decoration: none;
 }
 
+.carousel {
+    margin-bottom: 30px;
+}
+
+.recommended .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recommended .row .column {
+    flex: 30%;
+    padding: 20px;
+}
+
+@media screen and (max-width: 992px) {
+    .recommended .row .column {
+        flex: 50%;
+    }
+}
+
 @media screen and (max-width: 768px) {
 
     footer {
@@ -75,4 +95,10 @@ footer ul li a {
     }
 
 
+}
+
+@media screen and (max-width: 600px) {
+    .recommended .row {
+        flex-direction: column;
+    }
 }
