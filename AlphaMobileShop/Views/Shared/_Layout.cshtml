@@ -10,27 +10,22 @@
 </head>
 <body>
     <header>
-        <div class="navbar navbar-inverse navbar-static-top">
+        <div class="navbar navbar-dark navbar-static-top navbar-expand-md bg-dark">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="@Url.Action("Index","Home")">
-                        <img src="@Url.Content("~/logo_transparent650.png")" style=" height: 102.5px; width: 102.5px;" />
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="~/logo_transparent650.png" style=" height: 102.5px; width: 102.5px;" />
                     </a>
-
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-link">@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="nav-link">@Html.ActionLink("Products", "About", "Home")</li>
+                            <li class="nav-link">@Html.ActionLink("About us", "Contact", "Home")</li>
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
             </div>
         </div>
     </header>
@@ -39,34 +34,35 @@
         <hr />
         <footer>
             <div class="container">
-                <div class="container-Text-Align-Left">
-                <div class="col-sm-3">
-                        <a href="@Url.Action("Index","Home")">
-                            <img src="@Url.Content("~/logo_transparent650.png")" style="height: 102.5px; width: 102.5px;" />
-                        </a>
-                </div>
-                <div class="col-sm-3">
-                    <h5>Контакт</h5>
-                    <ul class="list-unstyled" style="line-height: 1.5;">
-                        <li>070 123 456</li>
-                        <li>contact@alpha.com</li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h5>За нас</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5>Социјални мрежи</h5>
-                    <div>
-                        <ul class="list-unstyled" style="line-height: 1.5;">
-                            <li>Facebook</li>
-                            <li>Instagram</li>
-                            <li>Twitter</li>
-                        </ul>  
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <a href="@Url.Action("Index","Home")">
+                                <img src="@Url.Content("~/logo_transparent650.png")" style="height: 102.5px; width: 102.5px;" />
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5>Контакт</h5>
+                            <ul class="list-unstyled" style="line-height: 1.5;">
+                                <li><a href="tel:+38970123456">070 123 456</a></li>
+                                <li><a href="mailto:contact@alpha.com">contact@alpha.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5>За нас</h5>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5>Социјални мрежи</h5>
+                            <div>
+                                <ul class="list-unstyled" style="line-height: 1.5;">
+                                    <li>Facebook</li>
+                                    <li>Instagram</li>
+                                    <li>Twitter</li>
+                                </ul>
+                            </div>
+                        </div>        
                     </div>
-                </div>
             </div>
-            </div>
+            <hr />
             <div class="container">
                 <div class="text-center col-sm-12">
                     &copy; @DateTime.Now.Year - Alpha Mobile Store
