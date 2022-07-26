@@ -220,6 +220,8 @@
     <Content Include="Images\AppleWatch7.jpg" />
     <Content Include="Images\GooglePixel6Pro.jpg" />
     <Content Include="Images\ipad.jpg" />
+    <Content Include="Images\ipadairh600.png" />
+    <Content Include="Images\ipadh600.jpg" />
     <Content Include="Images\OnePlus10Pro.jpg" />
     <Content Include="Images\SamsungGalaxyNote20Ulta5G.jpg" />
     <Content Include="Images\SamsungGalaxyS22Ultra5G.jpg" />
