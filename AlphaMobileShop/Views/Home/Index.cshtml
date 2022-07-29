@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<AlphaMobileShop.Models.Product>
+@{
     ViewBag.Title = "Alpha Mobile Store";
 }
 
@@ -9,7 +10,7 @@
         <button type="button" data-bs-target="#CarouselMain" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000"> 
+        <div class="carousel-item active" data-bs-interval="5000">
             <img src="~/Images/appleh600.jpg" class="rounded d-block w-100" alt="First">
         </div>
         <div class="carousel-item" data-bs-interval="5000">
@@ -29,96 +30,20 @@
     </button>
 </div>
 
-
-
 <div class="recommended">
     <h2 class="text-center mb-5">Recommended products</h2>
     <div class="row text-center gap-3 mb-4">
-        <div class="column shadow bg-white rounded">
-            <div class="column-img">
-                <a href="#">
-                    <img src="~/Images/AppleIPhone13ProMax.jpg" style="width: 300px; height: 300px" />
-                </a>
-            </div>
-            <div class="column-name">Apple Iphone 13 Pro Max</div>
-            <div class="column-price">1199$</div>
-        </div>
-        <div class="column shadow bg-white rounded">
-            <div class="column-img">
-                <a href="#">
-                    <img src="~/Images/SamsungGalaxyS22Ultra5G.jpg" style="width: 300px; height: 300px" />
-                </a>
-            </div>
-            <div class="column-name">Samsung Galaxy S22 Ultra 5G</div>
-            <div class="column-price">1049$</div>
-        </div>
-        <div class="column shadow bg-white rounded">
-            <div class="column-img">
-                <a href="#">
-                    <img src="~/Images/GooglePixel6Pro.jpg" style="width: 300px; height: 300px" />
-                </a>
-            </div>
-            <div class="column-name">Google Pixel 6 Pro</div>
-            <div class="column-price">999$</div>
-        </div>
+            @foreach (var item in Model.Take(9))
+            {
+                <div class="column shadow bg-white rounded">
+                    <div class="column-img">
+                        <a href="#">
+                            <img src="@item.Name" style="width: 300px; height: 300px" />
+                        </a>
+                    </div>
+                    <div class="column-name">@item.Model</div>
+                    <div class="column-price">@item.Price $</div>
+                 </div>
+             }
     </div>
-    <div class="row text-center gap-3 mb-4">
-        <div class="column shadow bg-white rounded">
-            <div class="column-img">
-                <a href="#">
-                    <img src="~/Images/AppleWatch7.jpg" style="width: 300px; height: 300px" />
-                </a>
-            </div>
-            <div class="column-name">Apple Watch 7</div>
-            <div class="column-price">449$</div>
-        </div>
-        <div class="column shadow bg-white rounded">
-            <div class="column-img">
-                <a href="#">
-                    <img src="~/Images/SamsungGalaxyNote20Ulta5G.jpg" style="width: 300px; height: 300px" />
-                </a>
-            </div>
-            <div class="column-name text-center">Samsung Galaxy Note 20 Ultra 5G</div>
-            <div class="column-price">929$</div>
-        </div>
-        <div class="column shadow bg-white rounded">
-            <div class="column-img">
-                <a href="#">
-                    <img src="~/Images/OnePlus10Pro.jpg" style="width: 300px; height: 300px" />
-                </a>
-            </div>
-            <div class="column-name">OnePlus 10 Pro</div>
-            <div class="column-price">899$</div>
-        </div>
-    </div>
-    <div class="row text-center gap-3 mb-4">
-        <div class="column shadow bg-white rounded">
-            <div class="column-img">
-                <a href="#">
-                    <img src="~/Images/AppleIpad2022.jpg" style="width: 300px; height: 300px" />
-                </a>
-            </div>
-            <div class="column-name">Apple iPad 2022</div>
-            <div class="column-price">549$</div>
-        </div>
-        <div class="column shadow bg-white rounded">
-            <div class="column-img">
-                <a href="#">
-                    <img src="~/Images/Xiaomi12Pro.jpg" style="width: 300px; height: 300px" />
-                </a>
-            </div>
-            <div class="column-name">Xiaomi 12 Pro</div>
-            <div class="column-price">949$</div>
-        </div>
-        <div class="column shadow bg-white rounded">
-            <div class="column-img">
-                <a href="#">
-                    <img src="~/Images/AppleSE2022.jpg" style="width: 300px; height: 300px" />
-                </a>
-            </div>
-            <div class="column-name">Apple SE 2022</div>
-            <div class="column-price">499$</div>
-        </div>
-    </div>
-
 </div>

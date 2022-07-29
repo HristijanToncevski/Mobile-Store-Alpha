@@ -74,9 +74,17 @@ hr {
     border: 1px double black;
 }
 
+.products-panel .row .col {
+    
+}
+
 @media screen and (max-width: 992px) {
     .recommended .row .column {
         flex: 50%;
+    }
+
+    .products-panel .row .col {
+
     }
 }
 
@@ -107,5 +115,9 @@ hr {
 @media screen and (max-width: 600px) {
     .recommended .row {
         flex-direction: column;
+    }
+
+    .products-panel .row .col {
+
     }
 }
