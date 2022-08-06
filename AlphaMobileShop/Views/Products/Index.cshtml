@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AlphaMobileShop.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<input type="button" value="Create New" class="btn btn-primary" onclick="location.href='@Url.Action("Create", "Products")'" />
+
+
+<div class="products-panel">
+    <div class="row gap-4 m-2 justify-content-center text-center align-items-stretch">
+        @foreach (var item in Model.OrderBy(id => Guid.NewGuid()))
+        {
+            <div class="col-lg-2 col-md-3 col-sm-5 d-flex flex-column justify-content-between shadow bg-white p-3" onclick="location.href='Products/Details/@item.Id'">
+                <div class="column-img">
+                    <a href="Products/Details/@item.Id">
+                        <img src="@item.Name" style="width: 125px; height: 125px" />
+                    </a>
+                </div>
+                <div class="column-name fw-bold" style="font-size: 15px;">@item.Model</div>
+                <div class="column-price fw-bold" style="font-size: 15px;">@item.Price $</div>
+                <div class="column-btn">
+                    <input type="button" value="Edit" class="btn btn-warning btn-sm mt-auto" onclick="location.href='@Url.Action("Edit", "Products", new { id = item.Id })'" />
+                    <button data-product-id="@item.Id" class="btn btn-danger btn-sm mt-auto js-delete">Delete</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $(".products-panel .js-delete").on("click", function () {
+                var button = $(this);
+                bootbox.confirm("Do you want to delete this product", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/Products/Delete/" + button.attr("data-product-id"),
+                            method: "POST",
+                            success: function () {
+                                $(button).parent().parent().remove();
+                            },
+                            error: function (err) {
+                                console.log(err);
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>    
+    
+}
