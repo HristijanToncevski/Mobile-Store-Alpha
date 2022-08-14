@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace AlphaMobileShop.Controllers
 {
+    [AllowAnonymous]
     public class FaqController : Controller
     {
         // GET: Faq

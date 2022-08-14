@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 class="ms-4">Details</h2>
 
 <div>
     <hr />
@@ -46,6 +46,9 @@
 
 <div>
     <input type="button" value="Back to List" class="btn btn-outline-primary m-2" onclick="location.href='@Url.Action("Index", "Products")'" />
-    <input type="button" value="Edit" class="btn btn-outline-warning m-2" onclick="location.href='@Url.Action("Edit", "Products", new { id = Model.Id })'" />
-</div>
+    @if (User.IsInRole("Administrator") || User.IsInRole("Editor"))
+    {
+        <input type="button" value="Edit" class="btn btn-outline-warning m-2" onclick="location.href='@Url.Action("Edit", "Products", new { id = Model.Id })'" />
+    }
+    </div>
 

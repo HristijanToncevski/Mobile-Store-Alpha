@@ -15,12 +15,14 @@ namespace AlphaMobileShop.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Products
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Products.ToList());
         }
 
         // GET: Products/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +38,7 @@ namespace AlphaMobileShop.Controllers
         }
 
         // GET: Products/Create
+        [Authorize(Roles = "Administrator,Editor")]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +49,7 @@ namespace AlphaMobileShop.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator,Editor")]
         public ActionResult Create([Bind(Include = "Id,ProductId,Name,Brand,Model,Price")] Product product)
         {
             if (ModelState.IsValid)
@@ -59,6 +63,7 @@ namespace AlphaMobileShop.Controllers
         }
 
         // GET: Products/Edit/5
+        [Authorize(Roles = "Administrator,Editor")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +83,7 @@ namespace AlphaMobileShop.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator,Editor")]
         public ActionResult Edit([Bind(Include = "Id,ProductId,Name,Brand,Model,Price")] Product product)
         {
             if (ModelState.IsValid)
@@ -88,6 +94,7 @@ namespace AlphaMobileShop.Controllers
             }
             return View(product);
         }
+  
         /*
         // GET: Products/Delete/5
         public ActionResult Delete(int? id)
@@ -102,11 +109,13 @@ namespace AlphaMobileShop.Controllers
                 return HttpNotFound();
             }
             return View(product);
-        }*/
+        }
+        */
 
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int id)
         {
             Product product = db.Products.Find(id);
